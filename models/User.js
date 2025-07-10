@@ -17,12 +17,18 @@ const userSchema = new mongoose.Schema({
         trim: true,
         minlength: [8, 'Password must be at least 8 characters long'],
         select: false
-    }
+    },
+
+    scores : [Number]
 });
 
 
 userSchema.index({ userName: 1 });
 
+userSchema.methods.addScore = async function (score) {
+    this.scores.push(score);
+    return this.save();
+}
 userSchema.pre('save', async function(next) {
     if (!this.isModified('password')) return next();
     
