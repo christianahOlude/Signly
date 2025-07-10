@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+
 userSchema.index({ userName: 1 });
 
 userSchema.pre('save', async function(next) {
