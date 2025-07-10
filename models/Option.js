@@ -1,9 +1,18 @@
 import mongoose from 'mongoose';
 
-const OptionSchema = new mongoose.Schema({
-  name: String,
-  videoUrl: String
+const optionSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+
+  videoUrl: {
+    type: String,
+    trim: true,
+    required: true
+  }
 });
 
-const Option = mongoose.model('Option', OptionSchema);
-module.exports = Option;
+const Option = mongoose.model('Option', optionSchema);
+export default Option;
