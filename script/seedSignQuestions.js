@@ -79,3 +79,5 @@ const seedSignQuestions = async () => {
         process.exit(1);
     }
 };
+
+export default seedSignQuestions;
