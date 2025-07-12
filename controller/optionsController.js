@@ -9,28 +9,48 @@ const HTTP_STATUS = {
 };
 
 export const createOptions = async (req, res) => {
-    const { options } = req.body;
+    const { questionId, options } = req.body;
+
+    // 1) Validate payload
+    if (!questionId) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'questionId is required'
+        });
+    }
+    if (!Array.isArray(options) || options.length !== 4) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'Exactly 4 options are required'
+        });
+    }
+    // Ensure exactly one correct answer
+    const correctCount = options.filter(opt => opt.isCorrect).length;
+    if (correctCount !== 1) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'Exactly one option must have isCorrect=true'
+        });
+    }
 
     try {
-        if (!Array.isArray(options) || options.length !== 4) {
-            return res.status(HTTP_STATUS.BAD_REQUEST).json({
-                success: false,
-                message: 'Exactly 4 text options are required'
-            });
-        }
+        // 2) Bulk‐create options, attaching questionId
+        const docs = options.map(opt => ({
+            questionId,
+            text:      opt.text,
+            isCorrect: Boolean(opt.isCorrect)
+        }));
+        const createdOptions = await Option.insertMany(docs);
 
-        const createdOptions = await Option.insertMany(
-            options.map(text => ({ text }))
-        );
-
-        res.status(HTTP_STATUS.CREATED).json({
+        return res.status(HTTP_STATUS.CREATED).json({
             success: true,
             message: 'Options created successfully',
             options: createdOptions
         });
+
     } catch (error) {
         console.error('Create options error:', error);
-        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+        return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
             success: false,
             message: 'Failed to create options',
             error: error.message
@@ -38,23 +58,26 @@ export const createOptions = async (req, res) => {
     }
 };
 
-// Get options by IDs (for retrieving question options)
 export const getOptionsByIds = async (req, res) => {
     const { optionIds } = req.body;
 
-    try {
-        const options = await Option.find({
-            _id: { $in: optionIds },
-            isActive: true
+    if (!Array.isArray(optionIds) || optionIds.length === 0) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'optionIds array is required'
         });
+    }
 
-        res.status(HTTP_STATUS.OK).json({
+    try {
+        const options = await Option.find({ _id: { $in: optionIds } }).lean();
+        return res.status(HTTP_STATUS.OK).json({
             success: true,
             options
         });
+
     } catch (error) {
         console.error('Get options error:', error);
-        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+        return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
             success: false,
             message: 'Failed to fetch options',
             error: error.message
@@ -62,14 +85,19 @@ export const getOptionsByIds = async (req, res) => {
     }
 };
 
-// Update option text
 export const updateOption = async (req, res) => {
     const { optionId } = req.params;
-    const { text } = req.body;
+    const { text, isCorrect } = req.body;
+
+    if (!optionId) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'optionId is required in URL'
+        });
+    }
 
     try {
         const option = await Option.findById(optionId);
-        
         if (!option) {
             return res.status(HTTP_STATUS.NOT_FOUND).json({
                 success: false,
@@ -77,17 +105,21 @@ export const updateOption = async (req, res) => {
             });
         }
 
-        option.text = text;
+        // Apply updates
+        if (typeof text === 'string') option.text = text;
+        if (typeof isCorrect === 'boolean') option.isCorrect = isCorrect;
+
         await option.save();
 
-        res.status(HTTP_STATUS.OK).json({
+        return res.status(HTTP_STATUS.OK).json({
             success: true,
             message: 'Option updated successfully',
             option
         });
+
     } catch (error) {
         console.error('Update option error:', error);
-        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+        return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
             success: false,
             message: 'Failed to update option',
             error: error.message

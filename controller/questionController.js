@@ -47,8 +47,8 @@ export const createQuestion = async (req, res) => {
             options.map((opt, idx) => {
                 return Option.create({
                     questionId: question._id,
-                    text:       opt.text,
-                    isCorrect:  idx === correctOptionIndex
+                    text: opt.text,
+                    isCorrect: idx === correctOptionIndex
                 });
             })
         );
