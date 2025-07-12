@@ -12,47 +12,67 @@ const HTTP_STATUS = {
 export const createQuestion = async (req, res) => {
     const { options, correctOptionIndex, imageUrl, difficulty } = req.body;
 
+    if (!imageUrl) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'imageUrl is required'
+        });
+    }
+
+    if (!Array.isArray(options) || options.length !== 4) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'Exactly 4 options are required'
+        });
+    }
+
+    if ( typeof correctOptionIndex !== 'number' || correctOptionIndex < 0 || correctOptionIndex > 3 ) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'correctOptionIndex must be an integer between 0 and 3'
+        });
+    }
+
     try {
-        if (!Array.isArray(options) || options.length !== 4) {
-            return res.status(HTTP_STATUS.BAD_REQUEST).json({
-                success: false,
-                message: 'Exactly 4 options are required'
-            });
-        }
+        // 2) Create the question skeleton
+        const question = await Question.create({
+            imageUrl,
+            difficulty,
+            options: [],
+            correctOption: null
+        });
 
-        if (correctOptionIndex < 0 || correctOptionIndex > 3) {
-            return res.status(HTTP_STATUS.BAD_REQUEST).json({
-                success: false,
-                message: 'Correct option index must be between 0 and 3'
-            });
-        }
-
-        // Create all 4 options first
+        // 3) Create each Option, marking the correct one
         const createdOptions = await Promise.all(
-            options.map(opt => Option.create({
-                text: opt.text
-            }))
+            options.map((opt, idx) => {
+                return Option.create({
+                    questionId: question._id,
+                    text:       opt.text,
+                    isCorrect:  idx === correctOptionIndex
+                });
+            })
         );
 
-        // Create the question with the options
-        const question = await Question.create({
-            options: createdOptions.map(opt => opt._id),
-            correctOption: createdOptions[correctOptionIndex]._id,
-            imageUrl,
-            difficulty
-        });
+        // 4) Link options back into the question and save
+        question.options       = createdOptions.map(o => o._id);
+        question.correctOption = createdOptions[correctOptionIndex]._id;
+        await question.save();
 
-        await question.populate('options');
-        await question.populate('correctOption');
+        // 5) Populate and return
+        const populated = await Question.findById(question._id)
+            .populate('options')
+            .populate('correctOption')
+            .lean();
 
-        res.status(HTTP_STATUS.CREATED).json({
+        return res.status(HTTP_STATUS.CREATED).json({
             success: true,
             message: 'Question created successfully',
-            question
+            question: populated
         });
+
     } catch (error) {
         console.error('Create question error:', error);
-        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+        return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
             success: false,
             message: 'Failed to create question',
             error: error.message
