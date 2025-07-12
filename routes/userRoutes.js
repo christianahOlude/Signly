@@ -1,10 +1,8 @@
 import express from 'express';
-import {addScore} from "../controller/addScoreController.js";
-import {deleteUser} from "../controller/deleteUserController.js";
+import { getUserScores } from "../controller/getUserScoresController.js";
 
-const router = express.Router();
+const userRouter = express.Router();
 
-router.post('/score/:id',addScore);
+userRouter.post('/score/:id', getUserScores);
 
-router.delete('/:userId/', deleteUser)
-export default router;
+export default userRouter;

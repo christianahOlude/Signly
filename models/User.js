@@ -19,13 +19,8 @@ const userSchema = new mongoose.Schema({
         select: false
     },
 
-    scores : [Number],
-    isDeleted: {
-        type: Boolean,
-        default: false,
-    }
+    scores : [Number]
 });
-
 
 userSchema.index({ userName: 1 });
 
@@ -58,10 +53,6 @@ userSchema.methods.toSafeObject = function() {
     return safeUser;
 };
 
-userSchema.methods.softDelete = async function() {
-    this.isDeleted = true;
-    return this.save();
-}
-
 const User = mongoose.model('User', userSchema);
+
 export default User;
