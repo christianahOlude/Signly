@@ -32,7 +32,7 @@ export const register = async (req, res) => {
 
         return res.status(HTTP_STATUS.CREATED).json({
             success: true,
-            message: 'User registered successfully',
+            message: `${ newUser.userName }, registered successfully`,
             user: newUser
         });
 

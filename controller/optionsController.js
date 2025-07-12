@@ -18,6 +18,14 @@ export const createOptions = async (req, res) => {
             message: 'questionId is required'
         });
     }
+
+    if (!options.every(opt => opt.text && opt.text.trim())) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({
+            success: false,
+            message: 'All options must have text'
+        });
+    }
+
     if (!Array.isArray(options) || options.length !== 4) {
         return res.status(HTTP_STATUS.BAD_REQUEST).json({
             success: false,

@@ -59,7 +59,7 @@ import mongoose from 'mongoose';
 
 const QuestionSchema = new mongoose.Schema({
 
-    imageUrl: { type: String, required: true },
+    imageUrl: { type: String, required: true, trim: true },
 
     difficulty: { type: String, enums: ['easy', 'medium', 'hard'], default: 'easy' },
 
