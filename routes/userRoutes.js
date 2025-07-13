@@ -3,6 +3,6 @@ import { getUserScores } from "../controller/getUserScoresController.js";
 
 const userRouter = express.Router();
 
-userRouter.get('/score/:Id', getUserScores);
+userRouter.get('/score/:userId', getUserScores);
 
 export default userRouter;

@@ -16,45 +16,47 @@ const seedSignQuestions = async () => {
         await Option.deleteMany({});
         console.log('Existing questions and options cleared');
 
-        // List of seed questions with video URL and answers
         const questions = [
             {
-                word: 'Apple',
+                word: 'Book',
                 videoUrl: 'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752344682/book_yayxdj.mp4',
                 options: ['Apple', 'Banana', 'Book', 'Mango'],
                 correctIndex: 2
             },
             {
-                word: 'Dog',
-                videoUrl: 'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752345680/drink_mbjkfy.mp4',
-                options: ['drink', 'Dog', 'Cow', 'Horse'],
+                word: 'West',
+                videoUrl: 'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752414341/6864_zi4zu8.mp4',
+                options: ['West', 'Dog', 'Cow', 'Horse'],
                 correctIndex: 0
             },
             {
-                word: 'Book',
-                videoUrl: 'https://aslbricks.org/New/ASL-Videos/zip.mp4',
+                word: 'zip',
+                videoUrl: 'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752413242/zip_jtd1kv.mp4',
                 options: ['Pen', 'Paper', 'zip', 'Notebook'],
                 correctIndex: 2
             },
             {
                 word: 'Drink',
-                videoUrl: 'https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/v1/signs/drink.mp4',
+                videoUrl: 'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752345680/drink_mbjkfy.mp4',
                 options: ['Eat', 'Drink', 'Sleep', 'Cook'],
                 correctIndex: 1
             },
             {
-                word: 'Hello',
-                videoUrl: 'https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/v1/signs/hello.mp4',
-                options: ['Goodbye', 'Hi', 'Yes', 'Hello'],
+                word: 'Wet',
+                videoUrl: 'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752414524/wet_i2qann.mp4',
+                options: ['Goodbye', 'Hi', 'Yes', 'Wet'],
                 correctIndex: 3
             },
+            {
+                word: 'Apple',
+                videoUrl:'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752413861/APPLE-406_sub7gn.mp4',
+                options: ['Banana', 'Apple', 'Mango', 'Orange'],
+                correctIndex: 1
+            }
         ];
 
-        // Loop through and insert each question + options
         for (const q of questions) {
-            const question = await Question.create({
-                imageUrl: q.videoUrl,
-                difficulty: 'easy',
+            const question = await Question.create({ imageUrl: q.videoUrl, difficulty: 'easy',
                 options: [],
                 correctOption: null
             });

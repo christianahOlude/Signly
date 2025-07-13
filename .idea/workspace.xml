@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on option, question and question controller">
-      <change afterPath="$PROJECT_DIR$/script/seedQuestions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/optionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/optionsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userRoutes.js" afterDir="false" />
-    </list>
+    <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on seeding sign questions" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +47,9 @@
     &quot;repository&quot;: &quot;Signly&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -103,6 +100,7 @@
       <workItem from="1752238362397" duration="1445000" />
       <workItem from="1752241871344" duration="17743000" />
       <workItem from="1752333258565" duration="1455000" />
+      <workItem from="1752334731440" duration="7002000" />
     </task>
     <task id="LOCAL-00001" summary="update on step-up and option model.">
       <option name="closed" value="true" />
@@ -168,7 +166,31 @@
       <option name="project" value="LOCAL" />
       <updated>1752322267197</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update on seeding questions">
+      <option name="closed" value="true" />
+      <created>1752342939032</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752342939032</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update on seeding questions">
+      <option name="closed" value="true" />
+      <created>1752343139625</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752343139625</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update on seeding sign questions">
+      <option name="closed" value="true" />
+      <created>1752365173235</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752365173235</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +214,8 @@
     <MESSAGE value="update on User.js." />
     <MESSAGE value="update on game, option, score and auth" />
     <MESSAGE value="update on option, question and question controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="update on option, question and question controller" />
+    <MESSAGE value="update on seeding questions" />
+    <MESSAGE value="update on seeding sign questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="update on seeding sign questions" />
   </component>
 </project>
