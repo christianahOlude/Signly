@@ -10,9 +10,9 @@ const HTTP_STATUS = {
 };
 
 export const createQuestion = async (req, res) => {
-    const { options, correctOptionIndex, imageUrl, difficulty } = req.body;
+    const { options, correctOptionIndex, videoUrl, difficulty } = req.body;
 
-    if (!imageUrl) {
+    if (!videoUrl) {
         return res.status(HTTP_STATUS.BAD_REQUEST).json({
             success: false,
             message: 'imageUrl is required'
@@ -34,12 +34,12 @@ export const createQuestion = async (req, res) => {
     }
 
     try {
-        // 2) Create the question skeleton
         const question = await Question.create({
-            imageUrl,
+            videoUrl,
             difficulty,
             options: [],
-            correctOption: null
+            correctOption: null,
+            isActive: true
         });
 
         // 3) Create each Option, marking the correct one

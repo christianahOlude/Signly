@@ -1,20 +1,25 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import Question from '../models/Question.js';
 import Option from '../models/Option.js';
 
-dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+dotenv.config({ path: join(__dirname, '../.env') });
+
 const MONGO_URI = process.env.MONGO_URI;
 
+// const maskedUri = MONGO_URI?.replace(/(mongodb\+srv:\/\/)([^:]+):([^@]+)@/, '$1****:****@');
+
 const seedSignQuestions = async () => {
+
     try {
         await mongoose.connect(MONGO_URI);
-        console.log('✅ Connected to MongoDB');
-
-        // Clear previous data
-        await Question.deleteMany({});
-        await Option.deleteMany({});
-        console.log('Existing questions and options cleared');
+        console.log('Connected to MongoDB...');
 
         const questions = [
             {
@@ -56,9 +61,12 @@ const seedSignQuestions = async () => {
         ];
 
         for (const q of questions) {
-            const question = await Question.create({ imageUrl: q.videoUrl, difficulty: 'easy',
+            const question = await Question.create({
+                videoUrl: q.videoUrl,
+                difficulty: 'easy',
                 options: [],
-                correctOption: null
+                correctOption: null,
+                isActive: true
             });
 
             const createdOptions = await Option.insertMany(
@@ -74,12 +82,16 @@ const seedSignQuestions = async () => {
             await question.save();
         }
 
-        console.log('✅ Sign questions seeded successfully!');
+        const questionCount = await Question.countDocuments();
+        const optionCount = await Option.countDocuments();
+        console.log(`Seeded ${questionCount} questions and ${optionCount} options successfully!`);
         process.exit(0);
     } catch (error) {
-        console.error('❌ Seed error:', error.message);
+        console.error('Seed error:', error.message);
         process.exit(1);
+    } finally {
+        await mongoose.disconnect();
+        console.log('Disconnected from MongoDB...');
     }
 };
-
-export default seedSignQuestions;
+seedSignQuestions()

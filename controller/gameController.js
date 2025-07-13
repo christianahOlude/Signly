@@ -12,6 +12,17 @@ const HTTP_STATUS = {
 export const createGame = async (req, res) => {
     const { userId } = req.params;
     try {
+        // First check total questions available
+        const totalQuestions = await Question.countDocuments();
+        console.log(`Total questions in database: ${totalQuestions}`);
+
+        if (totalQuestions === 0) {
+            return res.status(HTTP_STATUS.BAD_REQUEST).json({
+                success: false,
+                message: 'No questions available in the database'
+            });
+        }
+
         // Get random questions from the database
         const questions = await Question.aggregate([
             { $match: { isActive: true } },
@@ -21,7 +32,7 @@ export const createGame = async (req, res) => {
         if (questions.length === 0) {
             return res.status(HTTP_STATUS.BAD_REQUEST).json({
                 success: false,
-                message: 'No questions available'
+                message: 'No active questions available'
             });
         }
 
