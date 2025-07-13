@@ -20,20 +20,20 @@ const seedSignQuestions = async () => {
         const questions = [
             {
                 word: 'Apple',
-                videoUrl: 'https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/v1/signs/apple.mp4',
-                options: ['Apple', 'Banana', 'Orange', 'Mango'],
-                correctIndex: 0
+                videoUrl: 'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752344682/book_yayxdj.mp4',
+                options: ['Apple', 'Banana', 'Book', 'Mango'],
+                correctIndex: 2
             },
             {
                 word: 'Dog',
-                videoUrl: 'https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/v1/signs/dog.mp4',
-                options: ['Cat', 'Dog', 'Cow', 'Horse'],
-                correctIndex: 1
+                videoUrl: 'https://res.cloudinary.com/dgg6igpfy/video/upload/v1752345680/drink_mbjkfy.mp4',
+                options: ['drink', 'Dog', 'Cow', 'Horse'],
+                correctIndex: 0
             },
             {
                 word: 'Book',
-                videoUrl: 'https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/v1/signs/book.mp4',
-                options: ['Pen', 'Paper', 'Book', 'Notebook'],
+                videoUrl: 'https://aslbricks.org/New/ASL-Videos/zip.mp4',
+                options: ['Pen', 'Paper', 'zip', 'Notebook'],
                 correctIndex: 2
             },
             {
