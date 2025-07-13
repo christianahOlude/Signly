@@ -42,7 +42,6 @@ export const createQuestion = async (req, res) => {
             isActive: true
         });
 
-        // 3) Create each Option, marking the correct one
         const createdOptions = await Promise.all(
             options.map((opt, idx) => {
                 return Option.create({
@@ -53,12 +52,12 @@ export const createQuestion = async (req, res) => {
             })
         );
 
-        // 4) Link options back into the question and save
-        question.options       = createdOptions.map(o => o._id);
+        //Link options back into the question and save
+        question.options = createdOptions.map(o => o._id);
         question.correctOption = createdOptions[correctOptionIndex]._id;
         await question.save();
 
-        // 5) Populate and return
+        // Populate and return
         const populated = await Question.findById(question._id)
             .populate('options')
             .populate('correctOption')

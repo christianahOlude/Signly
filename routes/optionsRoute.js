@@ -5,8 +5,6 @@ const optionRouter = express.Router();
 
 optionRouter.post('/batch', createOptions);
 
-// optionRouter.post('/batch-get', getOptionsByIds);
-
 optionRouter.put('/:optionId', updateOption);
 
 export default optionRouter;

@@ -65,8 +65,7 @@ gameSchema.methods.submitAnswer = async function(questionId, answerId, timeSpent
 gameSchema.methods.finishGame = async function() {
     this.status = 'completed';
     this.completedAt = new Date();
-    
-    // Update user's score history
+
     const user = await mongoose.model('User').findById(this.user);
     await user.addScore(this.totalScore);
     

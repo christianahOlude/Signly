@@ -12,7 +12,6 @@ const HTTP_STATUS = {
 export const createGame = async (req, res) => {
     const { userId } = req.params;
     try {
-        // First check total questions available
         const totalQuestions = await Question.countDocuments();
         console.log(`Total questions in database: ${totalQuestions}`);
 
@@ -23,7 +22,6 @@ export const createGame = async (req, res) => {
             });
         }
 
-        // Get random questions from the database
         const questions = await Question.aggregate([
             { $match: { isActive: true } },
             { $sample: { size: 4 } }
