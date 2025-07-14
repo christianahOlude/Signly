@@ -10,9 +10,9 @@ const HTTP_STATUS = {
 };
 
 export const createQuestion = async (req, res) => {
-    const { options, correctOptionIndex, imageUrl, difficulty } = req.body;
+    const { options, correctOptionIndex, videoUrl, difficulty } = req.body;
 
-    if (!imageUrl) {
+    if (!videoUrl) {
         return res.status(HTTP_STATUS.BAD_REQUEST).json({
             success: false,
             message: 'imageUrl is required'
@@ -34,15 +34,14 @@ export const createQuestion = async (req, res) => {
     }
 
     try {
-        // 2) Create the question skeleton
         const question = await Question.create({
-            imageUrl,
+            videoUrl,
             difficulty,
             options: [],
-            correctOption: null
+            correctOption: null,
+            isActive: true
         });
 
-        // 3) Create each Option, marking the correct one
         const createdOptions = await Promise.all(
             options.map((opt, idx) => {
                 return Option.create({
@@ -53,12 +52,12 @@ export const createQuestion = async (req, res) => {
             })
         );
 
-        // 4) Link options back into the question and save
-        question.options       = createdOptions.map(o => o._id);
+        //Link options back into the question and save
+        question.options = createdOptions.map(o => o._id);
         question.correctOption = createdOptions[correctOptionIndex]._id;
         await question.save();
 
-        // 5) Populate and return
+        // Populate and return
         const populated = await Question.findById(question._id)
             .populate('options')
             .populate('correctOption')

@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on option, question and question controller">
-      <change beforePath="$PROJECT_DIR$/controller/optionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/optionsController.js" afterDir="false" />
+    <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on seeding sign questions">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/gameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/gameController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/questionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/questionController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Question.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/gameRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/gameRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/seedSignQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/seedSignQuestions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +55,9 @@
     &quot;repository&quot;: &quot;Signly&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -58,23 +66,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "auth",
-    "last_opened_file_path": "/home/bamsy/Signly",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "ts.external.directory.path": "/home/bamsy/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;seedQuestions&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bamsy/Signly&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/bamsy/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -99,6 +107,13 @@
       <workItem from="1752227044518" duration="11295000" />
       <workItem from="1752238362397" duration="1445000" />
       <workItem from="1752241871344" duration="17743000" />
+      <workItem from="1752333258565" duration="1455000" />
+      <workItem from="1752334731440" duration="7002000" />
+      <workItem from="1752412784149" duration="7296000" />
+      <workItem from="1752420687100" duration="439000" />
+      <workItem from="1752421157666" duration="181000" />
+      <workItem from="1752421362694" duration="463000" />
+      <workItem from="1752422715755" duration="2507000" />
     </task>
     <task id="LOCAL-00001" summary="update on step-up and option model.">
       <option name="closed" value="true" />
@@ -164,7 +179,39 @@
       <option name="project" value="LOCAL" />
       <updated>1752322267197</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update on seeding questions">
+      <option name="closed" value="true" />
+      <created>1752342939032</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752342939032</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update on seeding questions">
+      <option name="closed" value="true" />
+      <created>1752343139625</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752343139625</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update on seeding sign questions">
+      <option name="closed" value="true" />
+      <created>1752365173235</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752365173235</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update on seeding sign questions">
+      <option name="closed" value="true" />
+      <created>1752416132378</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752416132378</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +235,8 @@
     <MESSAGE value="update on User.js." />
     <MESSAGE value="update on game, option, score and auth" />
     <MESSAGE value="update on option, question and question controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="update on option, question and question controller" />
+    <MESSAGE value="update on seeding questions" />
+    <MESSAGE value="update on seeding sign questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="update on seeding sign questions" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 import User from '../models/User.js';
+import mongoose from "mongoose";
 
 const HTTP_STATUS = {
     OK: 200,
@@ -12,7 +13,7 @@ export const getUserScores = async (req, res) => {
     try {
         const user = await User.findById(userId);
         
-        if (!user) {
+        if (!mongoose.Types.ObjectId.isValid(userId)) {
             return res.status(HTTP_STATUS.NOT_FOUND).json({
                 success: false,
                 message: 'User not found'

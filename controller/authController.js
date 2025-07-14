@@ -9,9 +9,9 @@ const HTTP_STATUS = {
 }
 
 export const register = async (req, res) => {
-    const { userName: username, password: password } = req.body;
+    const { userName, password } = req.body;
 
-    if (!username || !password) {
+    if (!userName || !password) {
         return res.status(HTTP_STATUS.BAD_REQUEST).json({
             success: false,
             message: 'Username and password are required'
@@ -19,7 +19,7 @@ export const register = async (req, res) => {
     }
 
     try {
-        const existingUser = await User.findOne({ userName: username });
+        const existingUser = await User.findOne({ userName });
         if (existingUser) {
             return res.status(HTTP_STATUS.BAD_REQUEST).json({
                 success: false,
@@ -27,12 +27,12 @@ export const register = async (req, res) => {
             });
         }
 
-        const newUser = new User({userName: username, password: password})
+        const newUser = new User({ userName, password })
         await newUser.save();
 
         return res.status(HTTP_STATUS.CREATED).json({
             success: true,
-            message: 'User registered successfully',
+            message: `${ newUser.userName }, registered successfully`,
             user: newUser
         });
 

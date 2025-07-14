@@ -22,8 +22,6 @@ const userSchema = new mongoose.Schema({
     scores : [Number]
 });
 
-userSchema.index({ userName: 1 });
-
 userSchema.methods.addScore = async function (score) {
     this.scores.push(score);
     return this.save();
