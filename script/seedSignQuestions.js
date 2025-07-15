@@ -13,8 +13,6 @@ dotenv.config({ path: join(__dirname, '../.env') });
 
 const MONGO_URI = process.env.MONGO_URI;
 
-// const maskedUri = MONGO_URI?.replace(/(mongodb\+srv:\/\/)([^:]+):([^@]+)@/, '$1****:****@');
-
 const seedSignQuestions = async () => {
 
     try {

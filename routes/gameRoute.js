@@ -1,9 +1,11 @@
 import express from 'express';
-import { createGame, submitAnswer, finishGame, getGameStats } from '../controller/gameController.js';
+import {createGame, submitAnswer, finishGame, getGameStats, getNextQuestion} from '../controller/gameController.js';
 
 const gameRouter = express.Router();
 
 gameRouter.post('/start/:userId', createGame);
+
+gameRouter.get('/:gameId/questions/:questionId/next', getNextQuestion);
 
 gameRouter.post('/:gameId/questions/:questionId/answer', submitAnswer);
 

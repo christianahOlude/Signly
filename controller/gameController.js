@@ -9,41 +9,45 @@ const HTTP_STATUS = {
     INTERNAL_SERVER_ERROR: 500
 };
 
+// Number of questions per game (currently one question with four options)
+const QUESTIONS_PER_GAME = 1;
+
+// Start a new game and return the single question
 export const createGame = async (req, res) => {
     const { userId } = req.params;
     try {
-        const totalQuestions = await Question.countDocuments();
-        console.log(`Total questions in database: ${totalQuestions}`);
-
-        if (totalQuestions === 0) {
-            return res.status(HTTP_STATUS.BAD_REQUEST).json({
-                success: false,
-                message: 'No questions available in the database'
-            });
-        }
-
-        const questions = await Question.aggregate([
+        // Sample exactly one active question
+        const [sampledQuestion] = await Question.aggregate([
             { $match: { isActive: true } },
-            { $sample: { size: 4 } }
+            { $sample: { size: QUESTIONS_PER_GAME } }
         ]);
 
-        if (questions.length === 0) {
+        if (!sampledQuestion) {
             return res.status(HTTP_STATUS.BAD_REQUEST).json({
                 success: false,
                 message: 'No active questions available'
             });
         }
 
+        // Create the game with a single question
         const game = await Game.create({
             user: userId,
-            questions: questions.map(question => ({ question: question._id }))
+            questions: [{ question: sampledQuestion._id }],
+            currentIndex: 0
         });
+
+        // Populate the question and its options
+        const question = await Question.findById(sampledQuestion._id).populate('options');
 
         res.status(HTTP_STATUS.CREATED).json({
             success: true,
             message: 'Game created successfully',
             gameId: game._id,
-            questionCount: questions.length
+            question: {
+                id: question._id,
+                videoUrl: question.videoUrl,
+                options: question.options.map(o => ({ id: o._id, text: o.text }))
+            }
         });
     } catch (error) {
         console.error('Create game error:', error);
@@ -55,6 +59,51 @@ export const createGame = async (req, res) => {
     }
 };
 
+export const getNextQuestion = async (req, res) => {
+    const { gameId } = req.params;
+    try {
+        const game = await Game.findById(gameId);
+        if (!game || game.status !== 'in-progress') {
+            return res.status(HTTP_STATUS.BAD_REQUEST).json({
+                success: false,
+                message: 'Game not available or already completed'
+            });
+        }
+
+        const index = game.currentIndex;
+        if (index >= game.questions.length) {
+            return res.status(HTTP_STATUS.BAD_REQUEST).json({
+                success: false,
+                message: 'No more questions'
+            });
+        }
+
+        const questionId = game.questions[index].question;
+        const question = await Question.findById(questionId).populate('options');
+
+        // advance index
+        game.currentIndex++;
+        await game.save();
+
+        res.status(HTTP_STATUS.OK).json({
+            success: true,
+            question: {
+                id: question._id,
+                videoUrl: question.videoUrl,
+                options: question.options.map(o => ({ id: o._id, text: o.text }))
+            }
+        });
+    } catch (error) {
+        console.error('Get next question error:', error);
+        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+            success: false,
+            message: 'Failed to fetch next question',
+            error: error.message
+        });
+    }
+};
+
+// Submit an answer for the single question in a game
 export const submitAnswer = async (req, res) => {
     const { gameId, questionId } = req.params;
     const { answerId, timeSpent } = req.body;
@@ -75,7 +124,8 @@ export const submitAnswer = async (req, res) => {
             });
         }
 
-        await game.submitAnswer(questionId, answerId, timeSpent);
+        // Delegate scoring and state update to the model method
+        await game.submitAnswers(questionId, answerId, timeSpent);
 
         res.status(HTTP_STATUS.OK).json({
             success: true,
@@ -92,9 +142,9 @@ export const submitAnswer = async (req, res) => {
     }
 };
 
+// Finish the game and return stats (single-question stats will reflect 0 or 1 correct)
 export const finishGame = async (req, res) => {
     const { gameId } = req.params;
-
     try {
         const game = await Game.findById(gameId);
         if (!game) {
@@ -111,8 +161,8 @@ export const finishGame = async (req, res) => {
             });
         }
 
-        await game.finishGame();
-        const stats = game.getGameStats();
+        await game.completeGame();
+        const stats = game.getGameStatistics();
 
         res.status(HTTP_STATUS.OK).json({
             success: true,
@@ -129,9 +179,9 @@ export const finishGame = async (req, res) => {
     }
 };
 
+// Retrieve current stats without altering game status
 export const getGameStats = async (req, res) => {
     const { gameId } = req.params;
-
     try {
         const game = await Game.findById(gameId)
             .populate('questions.question')

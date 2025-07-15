@@ -33,7 +33,7 @@ export const register = async (req, res) => {
         return res.status(HTTP_STATUS.CREATED).json({
             success: true,
             message: `${ newUser.userName }, registered successfully`,
-            user: newUser
+            user: newUser.toObject
         });
 
     } catch (error) {

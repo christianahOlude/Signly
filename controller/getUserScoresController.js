@@ -10,29 +10,18 @@ const HTTP_STATUS = {
 export const getUserScores = async (req, res) => {
     const { userId } = req.params;
 
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+        return res.status(HTTP_STATUS.NOT_FOUND).json({ success: false, message: 'User not found' });
+    }
+
     try {
         const user = await User.findById(userId);
-        
-        if (!mongoose.Types.ObjectId.isValid(userId)) {
-            return res.status(HTTP_STATUS.NOT_FOUND).json({
-                success: false,
-                message: 'User not found'
-            });
-        }
+        if(!user) return res.status(HTTP_STATUS.NOT_FOUND).json({ message: 'User not found', user: user })
 
-        const scoreStats = {
-            scores: user.scores,
-            highestScore: Math.max(...(user.scores.length ? user.scores : [0])),
-            totalGamesPlayed: user.scores.length,
-            averageScore: user.scores.length 
-                ? (user.scores.reduce((a, b) => a + b, 0) / user.scores.length).toFixed(2)
-                : 0
-        };
 
-        res.status(HTTP_STATUS.OK).json({
-            success: true,
-            data: scoreStats
-        });
+        const summary = user.getScoreSummary();
+
+        res.status(HTTP_STATUS.OK).json({ success: true, data: summary });
 
     } catch (error) {
         console.error('Get user scores error:', error);
