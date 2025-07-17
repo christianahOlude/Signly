@@ -1,8 +1,8 @@
-import express from 'express';
-import { createQuestion } from '../controller/questionController.js';
+import express from "express";
+import question from "../models/Question.js";
 
-const questionRouter = express.Router();
+const router = express.Router();
 
-questionRouter.post('/', createQuestion);
+router.get('/question', question)
 
-export default questionRouter;
+export default router;

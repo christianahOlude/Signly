@@ -19,7 +19,11 @@ const userSchema = new mongoose.Schema({
         select: false
     },
 
-    scores : [Number]
+    scores: [{
+        game: { type: mongoose.Types.ObjectId, ref: 'Game' },
+        score: Number,
+        playedAt: Date
+    }]
 });
 
 userSchema.methods.addScore = async function (score) {
@@ -51,6 +55,13 @@ userSchema.methods.toSafeObject = function() {
     return safeUser;
 };
 
+userSchema.methods.getScoreSummary = function() {
+    const list = this.scores.map(s => s.score);
+    const totalGames = list.length;
+    const highest = Math.max(0, ...list);
+    const average = totalGames ? (list.reduce((a, b) => a + b) / totalGames).toFixed(2) : '0.00';
+    return { totalGames, highest, average, history: this.scores };
+}
 const User = mongoose.model('User', userSchema);
 
 export default User;
