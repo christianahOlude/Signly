@@ -57,7 +57,7 @@ const seedSignQuestions = async () => {
                 questionVideoUrl: q.questionVideoUrl,
                 difficulty: 'easy',
                 options: [],
-                correctOption: null,
+                answer: null,
                 isActive: true
             });
 
@@ -70,7 +70,7 @@ const seedSignQuestions = async () => {
             );
 
             question.options = createdOptions.map(o => o._id);
-            question.correctOption = createdOptions[q.answer]._id;
+            question.answer = createdOptions[q.answer]._id;
             await question.save();
         }
 

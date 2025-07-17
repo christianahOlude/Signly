@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on seeding sign questions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/gameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/gameController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/getUserScoresController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/getUserScoresController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/optionsController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/questionController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/gameRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/gameRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/optionsRoute.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/questionRoute.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/seedSignQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/seedSignQuestions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on all files." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +65,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/bamsy/Signly",
+    "last_opened_file_path": "/home/bamsy/Signly-app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -125,6 +111,7 @@
       <workItem from="1752514498304" duration="697000" />
       <workItem from="1752520308102" duration="6860000" />
       <workItem from="1752565953092" duration="13336000" />
+      <workItem from="1752654774092" duration="6834000" />
     </task>
     <task id="LOCAL-00001" summary="update on step-up and option model.">
       <option name="closed" value="true" />
@@ -222,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752416132378</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update on all files.">
+      <option name="closed" value="true" />
+      <created>1752759514702</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752759514707</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +243,7 @@
     <MESSAGE value="update on option, question and question controller" />
     <MESSAGE value="update on seeding questions" />
     <MESSAGE value="update on seeding sign questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="update on seeding sign questions" />
+    <MESSAGE value="update on all files." />
+    <option name="LAST_COMMIT_MESSAGE" value="update on all files." />
   </component>
 </project>

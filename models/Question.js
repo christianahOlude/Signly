@@ -6,7 +6,7 @@ const QuestionSchema = new mongoose.Schema({
 
     options: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Option' }],
 
-    correctOption: { type: mongoose.Schema.Types.ObjectId, ref: 'Option' },
+    answer: { type: mongoose.Schema.Types.ObjectId, ref: 'Option' },
 
     isActive: { type: Boolean, default: true }
 
