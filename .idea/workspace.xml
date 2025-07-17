@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on seeding sign questions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/gameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/gameController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/questionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/questionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Question.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/gameRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/gameRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/seedSignQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/seedSignQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +37,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/christianahOlude/Signly.git&quot;,
-    &quot;accountId&quot;: &quot;5e0854dc-fa0d-46a3-9588-1a9f5652305e&quot;
+    &quot;accountId&quot;: &quot;81c5d51c-7c01-49b0-a4c0-6d26b9350e8c&quot;
   },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
@@ -71,7 +66,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;seedQuestions&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/bamsy/Signly&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -114,6 +109,8 @@
       <workItem from="1752421157666" duration="181000" />
       <workItem from="1752421362694" duration="463000" />
       <workItem from="1752422715755" duration="2507000" />
+      <workItem from="1752575913281" duration="8060000" />
+      <workItem from="1752681950958" duration="4895000" />
     </task>
     <task id="LOCAL-00001" summary="update on step-up and option model.">
       <option name="closed" value="true" />
