@@ -1,0 +1,123 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"aec32573-f676-4b11-8a42-9b2aa6049f1a\" name=\"Changes\" comment=\"update on seeding sign questions\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/controller/gameController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/controller/gameController.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/controller/questionController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/controller/questionController.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/models/Question.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/Question.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/models/User.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/User.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/routes/gameRoute.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/routes/gameRoute.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/script/seedSignQuestions.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/script/seedSignQuestions.js\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;Bamzy123&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/christianahOlude/Signly.git&quot;,\n    &quot;accountId&quot;: &quot;5e0854dc-fa0d-46a3-9588-1a9f5652305e&quot;\n  },\n  &quot;recentNewPullRequestHead&quot;: {\n    &quot;server&quot;: {\n      &quot;useHttp&quot;: false,\n      &quot;host&quot;: &quot;github.com&quot;,\n      &quot;port&quot;: null,\n      &quot;suffix&quot;: null\n    },\n    &quot;owner&quot;: &quot;christianahOlude&quot;,\n    &quot;repository&quot;: &quot;Signly&quot;\n  }\n}</component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2zgTm3Qy5hjs46YKiztNDxL11eH\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;seedQuestions&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/bamsy/Signly&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,\n    &quot;ts.external.directory.path&quot;: &quot;/home/bamsy/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.26927.40\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"aec32573-f676-4b11-8a42-9b2aa6049f1a\" name=\"Changes\" comment=\"\" />\n      <created>1752151872183</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1752151872183</updated>\n      <workItem from=\"1752151874242\" duration=\"19386000\" />\n      <workItem from=\"1752177486540\" duration=\"12822000\" />\n      <workItem from=\"1752216982287\" duration=\"877000\" />\n      <workItem from=\"1752217878664\" duration=\"1985000\" />\n      <workItem from=\"1752221695285\" duration=\"990000\" />\n      <workItem from=\"1752223618361\" duration=\"149000\" />\n      <workItem from=\"1752223778833\" duration=\"2794000\" />\n      <workItem from=\"1752227044518\" duration=\"11295000\" />\n      <workItem from=\"1752238362397\" duration=\"1445000\" />\n      <workItem from=\"1752241871344\" duration=\"17743000\" />\n      <workItem from=\"1752333258565\" duration=\"1455000\" />\n      <workItem from=\"1752334731440\" duration=\"7002000\" />\n      <workItem from=\"1752412784149\" duration=\"7296000\" />\n      <workItem from=\"1752420687100\" duration=\"439000\" />\n      <workItem from=\"1752421157666\" duration=\"181000\" />\n      <workItem from=\"1752421362694\" duration=\"463000\" />\n      <workItem from=\"1752422715755\" duration=\"2507000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"update on step-up and option model.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752155823712</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752155823712</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"update on step-up and option model.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752156260921</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752156260921</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"update on Options.js model.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752159848055</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752159848055</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"update on Options.js, Option.js, Question.js and Game.js model.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752168148079</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752168148079</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"update on Options.js, Option.js, Question.js and Game.js model.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752176441426</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752176441426</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"update on User.js.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752176501956</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752176501956</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"update on game, option, score and auth\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752307345252</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752307345252</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"update on option, question and question controller\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752322267197</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752322267197</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"update on seeding questions\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752342939032</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752342939032</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"update on seeding questions\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752343139625</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752343139625</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"update on seeding sign questions\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752365173235</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752365173235</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"update on seeding sign questions\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1752416132378</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1752416132378</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"13\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"update on step-up and option model.\" />\n    <MESSAGE value=\"update on Options.js model.\" />\n    <MESSAGE value=\"update on Options.js, Option.js, Question.js and Game.js model.\" />\n    <MESSAGE value=\"update on User.js.\" />\n    <MESSAGE value=\"update on game, option, score and auth\" />\n    <MESSAGE value=\"update on option, question and question controller\" />\n    <MESSAGE value=\"update on seeding questions\" />\n    <MESSAGE value=\"update on seeding sign questions\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"update on seeding sign questions\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 25a477c3f35b6aedf9e16d7a64daf09be1fb7910)
++++ b/.idea/workspace.xml	(date 1752449418941)
+@@ -4,15 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on seeding sign questions">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/controller/gameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/gameController.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/controller/questionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/questionController.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/Question.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Question.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/gameRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/gameRoute.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/script/seedSignQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/seedSignQuestions.js" afterDir="false" />
+-    </list>
++    <list default="true" id="aec32573-f676-4b11-8a42-9b2aa6049f1a" name="Changes" comment="update on game model and controller, options route and question model, controller then it's route." />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -66,23 +58,35 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;seedQuestions&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/home/bamsy/Signly&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+-    &quot;ts.external.directory.path&quot;: &quot;/home/bamsy/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "Node.js.Question.js.executor": "Debug",
++    "Node.js.seedSignQuestions.js.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "#10 on seedQuestions",
++    "last_opened_file_path": "/home/bamsy/Signly",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
++    "ts.external.directory.path": "/home/bamsy/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
++  <component name="RunManager">
++    <configuration name="Question.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/models/Question.js" working-dir="$PROJECT_DIR$/models">
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Node.js.Question.js" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -114,6 +118,7 @@
+       <workItem from="1752421157666" duration="181000" />
+       <workItem from="1752421362694" duration="463000" />
+       <workItem from="1752422715755" duration="2507000" />
++      <workItem from="1752425235892" duration="11476000" />
+     </task>
+     <task id="LOCAL-00001" summary="update on step-up and option model.">
+       <option name="closed" value="true" />
+@@ -211,7 +216,23 @@
+       <option name="project" value="LOCAL" />
+       <updated>1752416132378</updated>
+     </task>
+-    <option name="localTasksCounter" value="13" />
++    <task id="LOCAL-00013" summary="update on all.">
++      <option name="closed" value="true" />
++      <created>1752434565567</created>
++      <option name="number" value="00013" />
++      <option name="presentableId" value="LOCAL-00013" />
++      <option name="project" value="LOCAL" />
++      <updated>1752434565567</updated>
++    </task>
++    <task id="LOCAL-00014" summary="update on game model and controller, options route and question model, controller then it's route.">
++      <option name="closed" value="true" />
++      <created>1752449378803</created>
++      <option name="number" value="00014" />
++      <option name="presentableId" value="LOCAL-00014" />
++      <option name="project" value="LOCAL" />
++      <updated>1752449378803</updated>
++    </task>
++    <option name="localTasksCounter" value="15" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -237,6 +258,8 @@
+     <MESSAGE value="update on option, question and question controller" />
+     <MESSAGE value="update on seeding questions" />
+     <MESSAGE value="update on seeding sign questions" />
+-    <option name="LAST_COMMIT_MESSAGE" value="update on seeding sign questions" />
++    <MESSAGE value="update on all." />
++    <MESSAGE value="update on game model and controller, options route and question model, controller then it's route." />
++    <option name="LAST_COMMIT_MESSAGE" value="update on game model and controller, options route and question model, controller then it's route." />
+   </component>
+ </project>
+\ No newline at end of file

@@ -33,7 +33,7 @@ export const createGame = async (req, res) => {
         const game = await Game.create({
             user: userId,
             questions: [{ question: sampledQuestion._id }],
-            currentIndex: 0
+            answer: 0
         });
 
         // Populate the question and its options
@@ -45,7 +45,7 @@ export const createGame = async (req, res) => {
             gameId: game._id,
             question: {
                 id: question._id,
-                videoUrl: question.videoUrl,
+                questionVideoUrl: question.questionVideoUrl,
                 options: question.options.map(o => ({ id: o._id, text: o.text }))
             }
         });
@@ -70,7 +70,7 @@ export const getNextQuestion = async (req, res) => {
             });
         }
 
-        const index = game.currentIndex;
+        const index = game.answer;
         if (index >= game.questions.length) {
             return res.status(HTTP_STATUS.BAD_REQUEST).json({
                 success: false,
@@ -82,14 +82,14 @@ export const getNextQuestion = async (req, res) => {
         const question = await Question.findById(questionId).populate('options');
 
         // advance index
-        game.currentIndex++;
+        game.answer++;
         await game.save();
 
         res.status(HTTP_STATUS.OK).json({
             success: true,
             question: {
                 id: question._id,
-                videoUrl: question.videoUrl,
+                questionVideoUrl: question.questionVideoUrl,
                 options: question.options.map(o => ({ id: o._id, text: o.text }))
             }
         });
@@ -103,7 +103,6 @@ export const getNextQuestion = async (req, res) => {
     }
 };
 
-// Submit an answer for the single question in a game
 export const submitAnswer = async (req, res) => {
     const { gameId, questionId } = req.params;
     const { answerId, timeSpent } = req.body;
@@ -142,7 +141,6 @@ export const submitAnswer = async (req, res) => {
     }
 };
 
-// Finish the game and return stats (single-question stats will reflect 0 or 1 correct)
 export const finishGame = async (req, res) => {
     const { gameId } = req.params;
     try {
@@ -179,7 +177,6 @@ export const finishGame = async (req, res) => {
     }
 };
 
-// Retrieve current stats without altering game status
 export const getGameStats = async (req, res) => {
     const { gameId } = req.params;
     try {
@@ -194,7 +191,7 @@ export const getGameStats = async (req, res) => {
             });
         }
 
-        const stats = game.getGameStats();
+        const stats = game.getGameStatistics();
 
         res.status(HTTP_STATUS.OK).json({
             success: true,

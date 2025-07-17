@@ -2,9 +2,7 @@ import mongoose from 'mongoose';
 
 const QuestionSchema = new mongoose.Schema({
 
-    videoUrl: { type: String, required: true, trim: true },
-
-    difficulty: { type: String, enums: ['easy', 'medium', 'hard'], default: 'easy' },
+    questionVideoUrl: { type: String, required: true, trim: true },
 
     options: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Option' }],
 

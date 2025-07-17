@@ -10,7 +10,7 @@ const gameSchema = new mongoose.Schema({
         pointsEarned: { type: Number, default: 0 }
     }],
 
-    currentIndex: { type: Number, default: 0 },
+    answer: { type: Number, default: 0 },
 
     totalScore: { type: Number, default: 0 },
 
