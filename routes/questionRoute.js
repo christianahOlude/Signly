@@ -1,8 +1,8 @@
 import express from "express";
-import question from "../models/Question.js";
+import { getQuestions } from "../controller/questionController.js";
 
 const router = express.Router();
 
-router.get('/question', question)
+router.get('/question', getQuestions)
 
 export default router;
