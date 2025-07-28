@@ -50,44 +50,37 @@ const seedSignQuestions = async () => {
             }
         ];
 
-        const questionPromises = questions.map(async (q) => {
+        for (const q of questions) {
             const question = await Question.create({
                 questionVideoUrl: q.questionVideoUrl,
-                difficulty: 'easy',
-                options: [],
-                answer: null,
                 isActive: true
             });
 
-            const createdOptions = await Option.insertMany(
-                q.options.map((text) => ({
+            const optionDocs = await Option.create(
+                q.options.map(text => ({
                     questionId: question._id,
-                    text,
-                    isCorrect: text === q.answer // Check if the text is the correct answer
+                    text: text,
+                    isCorrect: text === q.answer
                 }))
             );
 
-            question.options = createdOptions.map(o => o._id);
+            // 3. Update the question with option references and correct answer
+            const optionIds = optionDocs.map(opt => opt._id);
+            const correctOption = optionDocs.find(opt => opt.text === q.answer);
 
-            // Find the correct answer option
-            const correctOption = createdOptions.find(o => o.text === q.answer);
-            if (correctOption) {
-                question.answer = correctOption._id; // Set the answer to the correct option's ID
-            } else {
-                console.error(`Correct answer not found for question: ${q.questionVideoUrl}`);
-            }
-
-            await question.save();
-        });
-
-        await Promise.all(questionPromises);
+            await Question.findByIdAndUpdate(question._id, {
+                options: optionIds,
+                answer: correctOption._id
+            });
+        }
 
         const questionCount = await Question.countDocuments();
         const optionCount = await Option.countDocuments();
         console.log(`Seeded ${questionCount} questions and ${optionCount} options successfully!`);
         process.exit(0);
     } catch (error) {
-        console.error('Seed error:', error.message, error.stack); // Log error stack
+        console.error('Seed error:', error.message);
+        console.error(error.stack);
         process.exit(1);
     } finally {
         await mongoose.disconnect();
