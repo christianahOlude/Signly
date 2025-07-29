@@ -9,12 +9,12 @@ export const getDailyChallenge = async (req, res) => {
         if(!user) return res.status(404).json({ error: 'User not found' });
         const now = new Date();
 
-        let challengeQuestion;
+        let rawQuestion;
         if (user.lastChallengeAt && isSameDay(now, user.lastChallengeAt)) {
-            challengeQuestion = await Question.findById(user.lastQuestionId);
+            rawQuestion = await Question.findById(user.lastQuestionId);
         } else {
             // Pick a new random question
-            [challengeQuestion] = await Question.aggregate([{ $sample: { size: 1 } }]);
+            [rawQuestion] = await Question.aggregate([{ $sample: { size: 1 } }]);
 
             if ( user.lastChallengeAt && differenceInCalendarDays(now, user.lastChallengeAt) === 1 ) {
                 user.streakCount += 1;
@@ -23,9 +23,15 @@ export const getDailyChallenge = async (req, res) => {
             }
 
             user.lastChallengeAt = now;
-            user.lastQuestionId = challengeQuestion._id;
+            user.lastQuestionId = rawQuestion._id;
             await user.save();
         }
+
+        const challengeQuestion = await Question
+            .findById(rawQuestion._id)
+            .populate('options', 'text isCorrect')
+            .populate('answer', 'text');
+
         res.json({ question: challengeQuestion, streak: user.streakCount });
     } catch (err) {
         console.error('Error in getDailyChallenge:', err);
