@@ -9,12 +9,12 @@ const HTTP_STATUS = {
 }
 
 export const register = async (req, res) => {
-    const { userName, password } = req.body;
+    const { userName } = req.body;
 
-    if (!userName || !password) {
+    if (!userName) {
         return res.status(HTTP_STATUS.BAD_REQUEST).json({
             success: false,
-            message: 'Username and password are required'
+            message: 'Username is required'
         });
     }
 
@@ -27,7 +27,7 @@ export const register = async (req, res) => {
             });
         }
 
-        const newUser = new User({ userName, password })
+        const newUser = new User({ userName })
         await newUser.save();
 
         return res.status(HTTP_STATUS.CREATED).json({

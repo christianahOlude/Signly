@@ -64,7 +64,6 @@ const seedSignQuestions = async () => {
                 }))
             );
 
-            // 3. Update the question with option references and correct answer
             const optionIds = optionDocs.map(opt => opt._id);
             const correctOption = optionDocs.find(opt => opt.text === q.answer);
 
